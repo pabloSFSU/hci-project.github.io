@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+
+   
+
+    
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand" style="font-family:Montserrat;padding-left:20px;">Pablo Martinez - Verification</a>
+    </nav>
+    <div class="container mt-5"></div>
+        <div class="container mt-5 my-class3">
+            <h1 style="text-align:center">Thanks for participating!</h1>
+            <img class="center" width="400" height="300" src="https://cms-assets.tutsplus.com/cdn-cgi/image/width=630/uploads/users/523/posts/32694/final_image/tutorial-preview-large.png" alt="Checkmark">
+            <p style="text-align:center">Your data:</p>
+        </div>
+        <h></h>
+        <h></h>
+        <h></h>
+    
+   
+            <div class="row justify-content-center my-5">
+                
+                <div class="topmargin col-sm-2">
+                    <strong><label for="FN" class="title">First Name:  </label></strong>
+                    <p id="FN" class="value"></p>
+                </div>
+                
+
+                <div class="topmargin col-sm-2">
+                    <strong><label for="LN" class="title">Last Name:</label></strong>
+                    <p id="LN" class="value"></p>
+                </div>
+            </div>
+        
+        <p>
+            <p></p>
+        </p>
+        <div class="row justify-content-center my-class2">
+            <div class="topmargin">
+                <strong><label for="ROLE" class="title">Role:  </label></strong>
+                <p id="ROLE" class="value"></p>
+            </div>
+        </div>
+        <p>
+            <p></p>
+        </p>
+        <div class="row justify-content-center my-class2">
+                
+            <div class="topmargin">
+                <strong><label for="FEET" class="title">Feet:  </label></strong>
+                <p id="FEET" class="value"></p>
+            </div>
+            
+
+            <div class="topmargin">
+                <strong><label for="INCHES" class="title">Inches:</label></strong>
+                <p id="INCHES" class="value"></p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-5" id="phoneDIV">
+                
+            <div class="topmargin col-sm-4">
+                <strong><label for="phone" class="title">Phone Number:  </label></strong>
+                <p id="phone" class="value">None entered.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-class2">
+                
+            <div class="topmargin">
+                <strong><label for="ADDRESS" class="title">Address:  </label></strong>
+                <p id="ADDRESS" class="value"></p>
+            </div>
+            
+
+            <div class="topmargin">
+                <strong><label for="ZIP" class="title">ZIP Code:</label></strong>
+                <p id="ZIP" class="value"></p>
+            </div>
+        </div>
+        <p></p>
+        <div class="row justify-content-center my-class2" id="opDIV">
+            <p><strong>Your selected services:</strong></p>
+            <div class="topmargin">
+                <ul id="UL">
+                    <li id="opPHONE" >opPHONE</li>
+                    <li id="opEMAIL" >opEMAIL</li>
+                    <li id="opTWITTER" >opTWITTER</li>
+                    <li id="opSURFACEMAIL" >opSURFACEMAIL</li>
+                    <li id="opPV">opPV</li>
+                    <p id="opNone">No services selected.</p>
+
+                </ul>
+            </div>
+        </div>
+        <p></p>
+        <div class="row justify-content-center my-class2" id="budgetDIV">
+                
+            <div class="topmargin">
+                <strong><label for="BUDGET" class="title">Your budget: </label></strong>
+                <p id="BUDGET" class="value">No budget selected.</p>
+            </div>
+        
+        </div>
+
+        <div class="row justify-content-center my-5" id="phoneDIV">
+                
+            <div class="topmargin col-sm-4">
+                <strong><label for="email" class="title">Email:  </label></strong>
+                <p id="email" class="value">None entered.</p>
+            </div>
+        </div>
+
+        <div class="container mt-5 my-class3">
+            <h1 style="text-align:center;font-size:24px;">You can close this tab now.</h1>
+            
+        </div>
+           
+        
+
+        <p></p>
+        <p></p>
+        <p></p>
+       
+    </div>
+
+    <script>
+
+        const queryString = window.location.search;
+        console.log(queryString);
+
+        const urlParams = new URLSearchParams(queryString);
+
+        const firstname = urlParams.get('Firstname');
+        document.getElementById("FN").innerHTML= firstname;
+
+        const lastname = urlParams.get('Lastname');
+        document.getElementById("LN").innerHTML= lastname;
+
+        var roleOpt = urlParams.get('role');
+
+        if(roleOpt=="None"){
+            
+            
+            document.getElementById("ROLE").innerHTML = "No Role";
+
+        }else if(roleOpt==1){
+            document.getElementById("ROLE").innerHTML = "Retired";
+
+        }else if(roleOpt==2){
+            document.getElementById("ROLE").innerHTML = "Student";
+        
+        }else if(roleOpt==3){
+            document.getElementById("ROLE").innerHTML = "Staff";
+        }
+        
+        var feet = urlParams.get('feet');
+        if(feet=="Feet"){
+            document.getElementById("FEET").innerHTML = "No feet entered.";
+        }else{
+            document.getElementById("FEET").innerHTML = feet;
+        }
+
+        var inches = urlParams.get('inches');
+        if(inches=="Inches"){
+            document.getElementById("INCHES").innerHTML = "No inches entered.";
+        }else if(inches==12){
+            document.getElementById("INCHES").innerHTML = 0;
+        
+        }else{
+            document.getElementById("INCHES").innerHTML = inches;
+        }
+
+        const phone = urlParams.get('Phone');
+        if(phone!=""){
+            document.getElementById("phone").innerHTML= phone;
+        }
+        
+
+        const address = urlParams.get('Address');
+        document.getElementById("ADDRESS").innerHTML= address;
+
+        const zip = urlParams.get('ZIP');
+        document.getElementById("ZIP").innerHTML= zip;
+        let x=false;
+
+        if(urlParams.get('OPPhone')!=undefined){
+            document.getElementById("opPHONE").innerHTML= "Phone";
+            x=true;
+        }else{
+            let ul = document.getElementById('UL');
+            ul.removeChild(document.getElementById('opPHONE'));
+        }
+
+        if(urlParams.get('OPEmail')==""){
+            document.getElementById("opEMAIL").innerHTML= "Email";
+            x=true;
+        }else{
+            let ul = document.getElementById('UL');
+            ul.removeChild(document.getElementById('opEMAIL'));
+        }
+
+        if(urlParams.get('OPTwitter')==""){
+            document.getElementById("opTWITTER").innerHTML= "Twitter";
+            x=true;
+        }else{
+            let ul = document.getElementById('UL');
+            ul.removeChild(document.getElementById('opTWITTER'));
+        }
+
+        if(urlParams.get('OPSurfaceMail')==""){
+            document.getElementById("opSURFACEMAIL").innerHTML= "Surface Mail";
+            x=true;
+        }else{
+            let ul = document.getElementById('UL');
+            ul.removeChild(document.getElementById('opSURFACEMAIL'));
+        }
+
+        if(urlParams.get('OPPersonalVisit')==""){
+            document.getElementById("opPV").innerHTML= "Personal Visit";
+            x=true;
+        }else{
+            let ul = document.getElementById('UL');
+            ul.removeChild(document.getElementById('opPV'));
+        }
+
+        if(x!=false){
+            var el = document.getElementById('opNone');
+            el.remove();
+        }
+        
+            
+        if(urlParams.get('budget')=="less50"){
+            document.getElementById("BUDGET").innerHTML= "Less than $50";
+        }else if(urlParams.get('budget')=="50-100"){
+            document.getElementById("BUDGET").innerHTML= "Between $50 and $100";
+        }else if(urlParams.get('budget')=="100+"){
+            document.getElementById("BUDGET").innerHTML= "More than &100";
+        }
+
+        const email = urlParams.get('email');
+        if(email!=""){
+            document.getElementById("email").innerHTML= email;
+        }
+        
+        
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</html>
